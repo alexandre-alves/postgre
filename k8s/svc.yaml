@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+     field.cattle.io/description: Postgre Nodeport
+  name: postgrecd
+  namespace: postgrecd
+  # Add labels and annotations as per your requirements
+spec:
+  ports:
+    - name: dpostgre
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+  selector:
+     app: postgre
+  type: NodePort     
+    # Specify the labels to match thepostgre pods
