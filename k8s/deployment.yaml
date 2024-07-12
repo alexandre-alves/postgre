@@ -24,4 +24,5 @@ spec:
           - name: POSTGRES_DB
             value: admin
           ports:
-            - containerPort: 5432
+            - name: dpostgre
+              containerPort: 5432
